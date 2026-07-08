@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNELBASE // MENTORIA LINUX SYSADMIN</title>
+    <title>KernelBase | Mentoria Linux SysAdmin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -35,13 +35,21 @@
 </head>
 <body class="text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-900 overflow-x-hidden">
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR COM BOTÃO DE DESTAQUE PARA O SOBRE -->
     <header class="border-b border-cyan-900/30 bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-center sm:justify-start">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-black tracking-widest text-white font-mono">
                     >KERNEL<span class="text-cyan-400">BASE_</span>
                 </span>
+            </div>
+            
+            <!-- Botão Sobre em destaque na Navbar -->
+            <div class="flex items-center">
+                <a href="sobre.html" class="flex items-center gap-2 border border-slate-700 bg-slate-900 hover:bg-cyan-500 hover:text-slate-900 text-cyan-400 px-5 py-2 rounded-md font-mono text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    Conheça o Instrutor
+                </a>
             </div>
         </div>
     </header>
@@ -65,17 +73,29 @@
                     </span>
                 </h1>
 
-                <!-- DESTAQUE DO PREÇO -->
+                <!-- CRONOGRAMA, VAGAS E PREÇO -->
                 <div class="inline-block bg-[#05070a] p-6 rounded-xl border border-cyan-500/40 shadow-[0_0_30px_rgba(6,182,212,0.15)] text-left w-full sm:w-auto relative overflow-hidden">
-                    <!-- Detalhe decorativo azul ciano -->
                     <div class="absolute top-0 left-0 w-1 h-full bg-cyan-500"></div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <!-- Infos da Mentoria -->
+                        <!-- Cronômetro e Infos -->
                         <div class="font-mono text-sm border-b sm:border-b-0 sm:border-r border-slate-800 pb-4 sm:pb-0 sm:pr-6 flex flex-col justify-center">
-                            <p class="text-slate-400 mb-2">> DURAÇÃO: <br><span class="text-white font-bold text-base">3 MESES (Ao Vivo)</span></p>
-                            <p class="text-slate-400 mb-2">> ENCONTROS: <br><span class="text-cyan-400 font-bold text-base">TERÇA A QUINTA</span></p>
-                            <p class="text-slate-400">> GRAVAÇÕES: <br><span class="text-cyan-400 font-bold text-base">VITALÍCIO</span></p>
+                            <p class="text-slate-400 mb-1">> INÍCIO: <span class="text-white font-bold">01 de Novembro</span></p>
+                            
+                            <!-- Contador Regressivo JS -->
+                            <div class="flex gap-2 my-2 text-center">
+                                <div class="bg-slate-900 border border-slate-700 rounded px-2 py-1 flex-1">
+                                    <span id="countdown-days" class="block text-xl font-black text-cyan-400">00</span>
+                                    <span class="text-[10px] text-slate-500 uppercase">Dias</span>
+                                </div>
+                                <div class="bg-slate-900 border border-slate-700 rounded px-2 py-1 flex-1">
+                                    <span id="countdown-hours" class="block text-xl font-black text-cyan-400">00</span>
+                                    <span class="text-[10px] text-slate-500 uppercase">Horas</span>
+                                </div>
+                            </div>
+
+                            <p class="text-slate-400 mb-1">> AULAS: <span class="text-cyan-400 font-bold">Terça a Quinta</span></p>
+                            <p class="text-red-400 text-xs font-bold animate-pulse mt-2 border border-red-500/30 bg-red-500/10 p-1 rounded text-center">⚠ VAGAS LIMITADAS</p>
                         </div>
                         
                         <!-- Preço (Em Ciano) -->
@@ -95,7 +115,7 @@
                 </div>
                 
                 <p class="text-base text-slate-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-cyan-400">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>, mantenedor do Kernel Linux (pt_BR). Ambiente interativo e próximo, focado em <strong class="text-white">debates reais e evolução técnica</strong>.
+                    Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-cyan-400">100% AO VIVO</strong> (3 meses de duração) com <strong>Daniel Pereira</strong>. Mentoria interativa com <strong class="text-white">debates reais</strong> e gravações vitalícias.
                 </p>
 
                 <!-- BOTÃO DE INSCRIÇÃO (CIANO) -->
@@ -109,7 +129,7 @@
                 </div>
             </div>
 
-            <!-- Lado Direito: Terminal SysAdmin (Tudo Ciano) -->
+            <!-- Lado Direito: Terminal SysAdmin -->
             <div class="relative w-full max-w-lg mx-auto mt-8 lg:mt-0 reveal active">
                 <div class="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full"></div>
                 <div class="relative bg-[#05070a] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden scanlines">
@@ -122,8 +142,8 @@
                     <div class="p-5 font-mono text-sm sm:text-base leading-relaxed text-cyan-100 h-64 flex flex-col justify-end">
                         <p class="text-slate-400">$ <span class="text-white">./iniciar_turma_3.sh</span></p>
                         <p class="text-slate-300">Carregando módulos da mentoria...</p>
-                        <p class="text-cyan-400 font-bold">[OK] Encontros Terça, Quarta e Quinta (Ao Vivo)</p>
-                        <p class="text-cyan-400 font-bold">[OK] Sala de Debates e Networking Ativada</p>
+                        <p class="text-cyan-400 font-bold">[OK] Encontros Terça a Quinta (Ao Vivo)</p>
+                        <p class="text-cyan-400 font-bold">[OK] Vagas limitadas validadas</p>
                         <p class="text-cyan-400 font-bold">[OK] Sistema de Gravação Vitalícia ON</p>
                         <p class="mt-2 text-cyan-400 flex items-center">
                             _ <span class="animate-pulse w-2 h-5 bg-cyan-400 inline-block ml-1"></span>
@@ -140,89 +160,82 @@
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
             </div>
             <div class="text-center md:text-left z-10">
-                <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 tracking-wide">Formato de Mentoria & Sala de Aula</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Esqueça os cursos engessados onde você apenas assiste vídeos mudos. Na nossa mentoria teremos um formato dinâmico estilo sala de aula com <strong class="text-cyan-400">debates ao vivo</strong>, tira-dúvidas em tempo real, resolução de problemas e um networking pesado com outros profissionais da área.</p>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 tracking-wide">Formato de Mentoria Dinâmica</h3>
+                <p class="text-slate-400 leading-relaxed text-lg">Esqueça os cursos engessados. Na nossa mentoria teremos um formato focado em <strong class="text-cyan-400">debates ao vivo</strong>, tira-dúvidas em tempo real, resolução de problemas e networking pesado com outros profissionais.</p>
             </div>
         </div>
 
         <!-- EMENTA DA MENTORIA -->
         <div class="mt-24 relative z-10">
             <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl font-black text-white uppercase tracking-wider mb-4">Ementa <span class="text-cyan-400">Técnica Completa</span></h2>
+                <h2 class="text-3xl font-black text-white uppercase tracking-wider mb-4">Ementa <span class="text-cyan-400">Técnica</span></h2>
                 <div class="h-1 w-24 bg-cyan-500 mx-auto rounded"></div>
-                <p class="mt-4 text-slate-400">Conteúdo prático estruturado do básico ao avançado.</p>
             </div>
 
             <!-- Grid da Ementa -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-sm">
-                <!-- Tópicos -->
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 101: Arquitetura do Sistema</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 101: Arquitetura</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">101.1</span> Determinar e configurar hardware</li>
-                        <li><span class="text-slate-600">101.2</span> Inicialização do sistema (Boot)</li>
-                        <li><span class="text-slate-600">101.3</span> Alterar runlevels e reiniciar</li>
+                        <li><span class="text-slate-600">101.1</span> Configurar hardware</li>
+                        <li><span class="text-slate-600">101.2</span> Boot do sistema</li>
+                        <li><span class="text-slate-600">101.3</span> Runlevels e serviços</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 102: Instalação e Pacotes</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 102: Pacotes</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">102.1</span> Design de layout e disco rígido</li>
-                        <li><span class="text-slate-600">102.4</span> Gerenciamento de pacotes Debian</li>
-                        <li><span class="text-slate-600">102.5</span> Gerenciamento pacotes RPM e YUM</li>
-                        <li><span class="text-slate-600">102.6</span> Linux como virtualização (Guest)</li>
+                        <li><span class="text-slate-600">102.1</span> Layout de disco</li>
+                        <li><span class="text-slate-600">102.4</span> Gerenciamento Debian</li>
+                        <li><span class="text-slate-600">102.5</span> RPM e YUM</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 103: Comandos GNU e Unix</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 103: Comandos Unix</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">103.1</span> Trabalho na linha de comando</li>
-                        <li><span class="text-slate-600">103.2</span> Filtragem de streams de texto</li>
-                        <li><span class="text-slate-600">103.5</span> Criar, monitorar e matar processos</li>
-                        <li><span class="text-slate-600">103.7</span> Busca de textos usando Regex</li>
+                        <li><span class="text-slate-600">103.1</span> Shell robusto</li>
+                        <li><span class="text-slate-600">103.2</span> Streams de texto</li>
+                        <li><span class="text-slate-600">103.5</span> Gerenciamento de processos</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 104: Dispositivos e FHS</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 104: Filesystems</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">104.1</span> Partiçoes e sistemas de arquivos</li>
-                        <li><span class="text-slate-600">104.3</span> Montagem e desmontagem</li>
-                        <li><span class="text-slate-600">104.5</span> Permissões de arquivos</li>
+                        <li><span class="text-slate-600">104.1</span> FHS na prática</li>
+                        <li><span class="text-slate-600">104.3</span> Montagem e tuning</li>
+                        <li><span class="text-slate-600">104.5</span> Permissões avançadas</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 105: Shell e Scripts</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 105: Scripting</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">105.1</span> Customizar o ambiente Shell</li>
-                        <li><span class="text-slate-600">105.2</span> Escrever e customizar scripts simples</li>
+                        <li><span class="text-slate-600">105.1</span> Variáveis de ambiente</li>
+                        <li><span class="text-slate-600">105.2</span> Automação com Shell Script</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal">
-                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 106 & 107: Admin & UI</h3>
+                    <h3 class="text-cyan-400 font-bold mb-3">> Tópico 106 & 107: SysAdmin</h3>
                     <ul class="text-slate-400 space-y-2">
-                        <li><span class="text-slate-600">106.1</span> Instalar e configurar X11</li>
-                        <li><span class="text-slate-600">107.1</span> Gerenciamento de usuários/grupos</li>
-                        <li><span class="text-slate-600">107.2</span> Automação e agendamento (cron)</li>
+                        <li><span class="text-slate-600">107.1</span> Usuários e Grupos</li>
+                        <li><span class="text-slate-600">107.2</span> Agendamento Cron</li>
                     </ul>
                 </div>
                 <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors reveal lg:col-span-3 md:col-span-2">
                     <h3 class="text-cyan-400 font-bold mb-3">> Tópicos Finais: Serviços, Redes e Segurança</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <ul class="text-slate-400 space-y-2">
-                            <li><span class="text-slate-600">108.1</span> Manutenção de data/hora do sistema</li>
-                            <li><span class="text-slate-600">108.2</span> Logs e monitoramento</li>
-                            <li><span class="text-slate-600">109.1</span> Protocolos IP e Config. de rede</li>
+                            <li><span class="text-slate-600">108.2</span> Logs do sistema</li>
+                            <li><span class="text-slate-600">109.1</span> Pilha TCP/IP</li>
                         </ul>
                         <ul class="text-slate-400 space-y-2">
-                            <li><span class="text-slate-600">109.3</span> Troubleshooting básico e DNS</li>
-                            <li><span class="text-slate-600">110.1</span> Segurança do Host e Administração</li>
-                            <li><span class="text-slate-600">110.3</span> Proteção de dados com criptografia</li>
+                            <li><span class="text-slate-600">109.3</span> Troubleshooting DNS</li>
+                            <li><span class="text-slate-600">110.1</span> Hardening e Criptografia</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- BANNER DE QUESTÕES FINAL -->
+            <!-- BANNER DE WHATSAPP FINAL -->
             <div class="mt-12 bg-slate-900/50 border border-cyan-500/30 p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6 reveal">
                 <div class="text-center md:text-left">
                     <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-2 flex items-center justify-center md:justify-start gap-2">
@@ -241,15 +254,9 @@
         </div>
     </main>
 
-    <!-- FOOTER COM LINK SOBRE -->
-    <div class="mt-10 border-t border-slate-800/50 pt-6 text-center pb-8 reveal">
-        <a href="sobre.html" class="text-slate-500 hover:text-cyan-400 text-sm font-mono transition-colors">
-            $ cat /var/www/instrutor/bio.txt
-        </a>
-    </div>
-
-    <!-- SCRIPT DE ANIMAÇÃO -->
+    <!-- SCRIPT DE ANIMAÇÃO E CRONÔMETRO -->
     <script>
+        // Animação de rolagem (Reveal)
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -263,6 +270,32 @@
         }
         window.addEventListener("scroll", reveal);
         reveal();
+
+        // Cronômetro regressivo para 1 de Novembro de 2026
+        var countDownDate = new Date("Nov 1, 2026 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Cálculos matemáticos simples para dias e horas
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            // Inserir os valores nos elementos HTML
+            if (document.getElementById("countdown-days")) {
+                document.getElementById("countdown-days").innerHTML = days < 10 ? "0" + days : days;
+            }
+            if (document.getElementById("countdown-hours")) {
+                document.getElementById("countdown-hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            }
+
+            // Se a data já passou, mostra mensagem zerada
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown-days").innerHTML = "00";
+                document.getElementById("countdown-hours").innerHTML = "00";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
