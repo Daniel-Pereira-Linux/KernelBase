@@ -10,7 +10,6 @@
             background-color: #0b0f19;
             background-image: radial-gradient(circle at 50% 0%, #0b0f19 0%, #05070a 100%);
         }
-        /* Efeito de scanline sutil para dar um ar de monitor antigo/terminal */
         .scanlines::before {
             content: " ";
             display: block;
@@ -28,6 +27,7 @@
 </head>
 <body class="text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-900 overflow-x-hidden">
 
+    <!-- NAVBAR ELITE (Sem botão da área do aluno) -->
     <header class="border-b border-cyan-900/30 bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -39,71 +39,213 @@
             <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest uppercase text-slate-400">
                 <a href="#curso" class="hover:text-cyan-400 transition-colors">/o_curso</a>
                 <a href="#ementa" class="hover:text-cyan-400 transition-colors">/ementa</a>
-                <a href="#autoridade" class="hover:text-cyan-400 transition-colors">/instrutor</a>
             </nav>
-
-            <div class="flex items-center gap-4">
-                <a href="#" class="border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 font-bold px-6 py-2 rounded text-sm transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] uppercase tracking-wider">
-                    Área do Aluno
-                </a>
-            </div>
+            
+            <!-- Espaçamento vazio para manter o layout alinhado -->
+            <div class="hidden md:block w-24"></div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative">
+    <!-- HERO SECTION DE CONVERSÃO -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 relative" id="curso">
+        <!-- Brilho de fundo -->
         <div class="absolute top-0 left-1/2 w-[800px] h-[400px] bg-cyan-600/10 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none"></div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             
-            <div class="space-y-8 text-center lg:text-left">
+            <!-- Lado Esquerdo: Copy de Vendas -->
+            <div class="space-y-6 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 bg-slate-900 border border-cyan-500/30 text-cyan-400 px-4 py-1.5 rounded-md text-xs font-mono font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(6,182,212,0.2)]">
                     <span class="text-green-400 animate-pulse">●</span> Matrículas Abertas
                 </div>
                 
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.1]">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1.1]">
                     FORMAÇÃO COMPLETA <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">
                         LINUX SYSADMIN
                     </span>
                 </h1>
                 
-                <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Do zero ao domínio absoluto da infraestrutura. Aprenda a administrar servidores, gerenciar permissões, redes e daemons de forma profissional com uma metodologia testada e validada por mais de 300 profissionais da área de tecnologia.
+                <!-- ESPAÇO PARA A DATA DE INÍCIO -->
+                <div class="inline-block border-l-4 border-cyan-500 bg-slate-800/50 px-4 py-2 font-mono text-sm">
+                    <span class="text-slate-400">> DATA_DE_INÍCIO: </span>
+                    <!-- EDITE A DATA ABAIXO -->
+                    <span class="text-cyan-400 font-bold">DEFINA A SUA DATA AQUI</span>
+                </div>
+                
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Aprenda do <strong class="text-white">absoluto zero ao avançado</strong> a administrar os principais sistemas Linux do mercado. Instrução <strong class="text-cyan-400">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>, grande nome do Linux no Brasil e mantenedor das documentações em português do Kernel Linux.
                 </p>
 
                 <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a href="#" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-lg font-black uppercase tracking-wider px-8 py-4 rounded-md transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] text-center">
                         Garantir Minha Vaga
                     </a>
-                    <a href="#ementa" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 text-lg font-bold px-8 py-4 rounded-md transition-all duration-300 text-center flex items-center justify-center gap-2">
-                        Ver Ementa
-                    </a>
-                </div>
-
-                <div class="flex items-center justify-center lg:justify-start gap-6 pt-4 text-sm font-mono text-slate-500">
-                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Acesso Vitalício</span>
-                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Certificado Válido</span>
-                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Suporte Direto</span>
                 </div>
             </div>
 
+            <!-- Lado Direito: Terminal Window SysAdmin -->
             <div class="relative w-full max-w-lg mx-auto mt-8 lg:mt-0">
                 <div class="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full"></div>
                 <div class="relative bg-[#05070a] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden scanlines">
+                    <!-- Terminal Header -->
                     <div class="bg-slate-900 border-b border-slate-800 px-4 py-3 flex items-center gap-2">
                         <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                         <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                         <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                        <div class="ml-4 text-xs font-mono text-slate-500">root@sysadmin-server:~</div>
+                        <div class="ml-4 text-xs font-mono text-slate-500">daniel@kernelbase:~</div>
                     </div>
+                    <!-- Terminal Body -->
                     <div class="p-5 font-mono text-sm sm:text-base leading-relaxed text-cyan-100">
-                        <p class="text-slate-400">$ <span class="text-white">uname -r</span></p>
-                        <p class="text-cyan-400">7.1.0-generic</p>
-                        <p class="mt-3 text-slate-400">$ <span class="text-white">systemctl start sshd nginx docker</span></p>
-                        <p class="text-slate-500">Job for docker.service started successfully.</p>
-                        <p class="mt-3 text-slate-400">$ <span class="text-white">netstat -tulpn | grep LISTEN</span></p>
-                        <p class="text-green-400">tcp  0  0 0.0.0.0:22    0.0.0.0:* LISTEN  1023/sshd</p>
-                        <p class="text-green-400">tcp  0  0 0.0.0.0:80    0.0.0.0:* LISTEN  1055/nginx</p>
-                        <p class="mt-3 text-slate-400">$ <span class="text-white">tail -f /var/log/auth.log</span></p>
-                        <p class="text-slate-300">Accepted publickey for root from 192.168.1.100 port 50123 ssh2</p>
-                        <p class="text-slate-300">pam_unix(sshd:session): session opened for user root</
+                        <p class="text-slate-400">$ <span class="text-white">whoami</span></p>
+                        <p class="text-cyan-400">Daniel Pereira - Kernel Maintainer (pt_BR)</p>
+                        <p class="mt-3 text-slate-400">$ <span class="text-white">cat /sysadmin/status.txt</span></p>
+                        <p class="text-slate-300">Carregando módulos da formação...</p>
+                        <p class="text-green-400 font-bold">[OK] Aulas Ao Vivo Preparadas</p>
+                        <p class="text-green-400 font-bold">[OK] Zero to Hero Mode: ON</p>
+                        <p class="mt-2 text-cyan-400 flex items-center">
+                            _ <span class="animate-pulse w-2 h-5 bg-cyan-400 inline-block ml-1"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMENTA DO CURSO -->
+        <div id="ementa" class="mt-32 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-white uppercase tracking-wider mb-4">Ementa <span class="text-cyan-400">Técnica</span></h2>
+                <div class="h-1 w-24 bg-cyan-500 mx-auto rounded"></div>
+                <p class="mt-4 text-slate-400">Conteúdo estruturado do básico ao avançado.</p>
+            </div>
+
+            <!-- Grid da Ementa -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-sm">
+                
+                <!-- Topic 101 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 101: System Architecture</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">101.1</span> Determine/configure hardware</li>
+                        <li><span class="text-slate-600">101.2</span> Boot the system</li>
+                        <li><span class="text-slate-600">101.3</span> Change runlevels/targets</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 102 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 102: Package Management</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">102.1</span> Design hard disk layout</li>
+                        <li><span class="text-slate-600">102.2</span> Install a boot manager</li>
+                        <li><span class="text-slate-600">102.3</span> Manage shared libraries</li>
+                        <li><span class="text-slate-600">102.4</span> Debian package management</li>
+                        <li><span class="text-slate-600">102.5</span> RPM and YUM management</li>
+                        <li><span class="text-slate-600">102.6</span> Linux as virtualization guest</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 103 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 103: GNU/Unix Commands</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">103.1</span> Command line work</li>
+                        <li><span class="text-slate-600">103.2</span> Process text streams</li>
+                        <li><span class="text-slate-600">103.3</span> Basic file management</li>
+                        <li><span class="text-slate-600">103.4</span> Streams, pipes, redirects</li>
+                        <li><span class="text-slate-600">103.5</span> Monitor/kill processes</li>
+                        <li><span class="text-slate-600">103.6</span> Execution priorities</li>
+                        <li><span class="text-slate-600">103.7</span> Regex search</li>
+                        <li><span class="text-slate-600">103.8</span> Basic file editing</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 104 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 104: Filesystems & FHS</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">104.1</span> Partitions & filesystems</li>
+                        <li><span class="text-slate-600">104.2</span> Filesystem integrity</li>
+                        <li><span class="text-slate-600">104.3</span> Mounting/unmounting</li>
+                        <li><span class="text-slate-600">104.5</span> Permissions/ownership</li>
+                        <li><span class="text-slate-600">104.6</span> Hard & symbolic links</li>
+                        <li><span class="text-slate-600">104.7</span> Find system files</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 105 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 105: Shell Scripting</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">105.1</span> Shell environment</li>
+                        <li><span class="text-slate-600">105.2</span> Write simple scripts</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 106 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 106: UI and Desktops</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">106.1</span> Install/configure X11</li>
+                        <li><span class="text-slate-600">106.2</span> Graphical Desktops</li>
+                        <li><span class="text-slate-600">106.3</span> Accessibility</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 107 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 107: Admin Tasks</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">107.1</span> User/group accounts</li>
+                        <li><span class="text-slate-600">107.2</span> Automate jobs (cron/systemd)</li>
+                        <li><span class="text-slate-600">107.3</span> Localisation</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 108 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 108: System Services</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">108.1</span> Maintain system time</li>
+                        <li><span class="text-slate-600">108.2</span> System logging</li>
+                        <li><span class="text-slate-600">108.3</span> MTA basics</li>
+                        <li><span class="text-slate-600">108.4</span> Printers & printing</li>
+                    </ul>
+                </div>
+
+                <!-- Topic 109 & 110 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-lg hover:border-cyan-500/40 transition-colors">
+                    <h3 class="text-cyan-400 font-bold mb-3">> Topic 109 & 110: Net & Sec</h3>
+                    <ul class="text-slate-400 space-y-2">
+                        <li><span class="text-slate-600">109.1</span> Internet protocols</li>
+                        <li><span class="text-slate-600">109.2</span> Network config</li>
+                        <li><span class="text-slate-600">109.3</span> Troubleshooting</li>
+                        <li><span class="text-slate-600">109.4</span> Client side DNS</li>
+                        <li><span class="text-slate-600">110.1</span> Security admin tasks</li>
+                        <li><span class="text-slate-600">110.2</span> Host security</li>
+                        <li><span class="text-slate-600">110.3</span> Data encryption</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <!-- BANNER DE QUESTÕES E CERTIFICADO -->
+            <div class="mt-12 bg-gradient-to-r from-slate-900 to-cyan-900/20 border border-cyan-500/30 p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-black text-white uppercase tracking-wide mb-2 flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-cyan-400">✓</span> Fixação & Certificado
+                    </h3>
+                    <p class="text-slate-300">Ao final da formação, você terá acesso a um laboratório com <strong class="text-cyan-400">90 questões práticas</strong> para testar seus conhecimentos e garantir que você dominou a ementa, além de receber seu <strong class="text-white">Certificado de Participação</strong>.</p>
+                </div>
+                <div class="shrink-0">
+                    <a href="#" class="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black uppercase tracking-wider px-6 py-3 rounded-md transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                        Quero Participar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
