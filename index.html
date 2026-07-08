@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KERNELBASE // FORMAÇÃO LINUX SYSADMIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 50% 0%, #0b0f19 0%, #05070a 100%);
+        }
+        /* Efeito de scanline sutil para dar um ar de monitor antigo/terminal */
+        .scanlines::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-900 overflow-x-hidden">
+
+    <header class="border-b border-cyan-900/30 bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-widest text-white font-mono">
+                    >KERNEL<span class="text-cyan-400">BASE_</span>
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest uppercase text-slate-400">
+                <a href="#curso" class="hover:text-cyan-400 transition-colors">/o_curso</a>
+                <a href="#ementa" class="hover:text-cyan-400 transition-colors">/ementa</a>
+                <a href="#autoridade" class="hover:text-cyan-400 transition-colors">/instrutor</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 font-bold px-6 py-2 rounded text-sm transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)] uppercase tracking-wider">
+                    Área do Aluno
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative">
+        <div class="absolute top-0 left-1/2 w-[800px] h-[400px] bg-cyan-600/10 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+            
+            <div class="space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-slate-900 border border-cyan-500/30 text-cyan-400 px-4 py-1.5 rounded-md text-xs font-mono font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(6,182,212,0.2)]">
+                    <span class="text-green-400 animate-pulse">●</span> Matrículas Abertas
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-white leading-[1.1]">
+                    FORMAÇÃO COMPLETA <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                        LINUX SYSADMIN
+                    </span>
+                </h1>
+                
+                <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Do zero ao domínio absoluto da infraestrutura. Aprenda a administrar servidores, gerenciar permissões, redes e daemons de forma profissional com uma metodologia testada e validada por mais de 300 profissionais da área de tecnologia.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-lg font-black uppercase tracking-wider px-8 py-4 rounded-md transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.6)] text-center">
+                        Garantir Minha Vaga
+                    </a>
+                    <a href="#ementa" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 text-lg font-bold px-8 py-4 rounded-md transition-all duration-300 text-center flex items-center justify-center gap-2">
+                        Ver Ementa
+                    </a>
+                </div>
+
+                <div class="flex items-center justify-center lg:justify-start gap-6 pt-4 text-sm font-mono text-slate-500">
+                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Acesso Vitalício</span>
+                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Certificado Válido</span>
+                    <span class="flex items-center gap-2"><span class="text-green-400">✔</span> Suporte Direto</span>
+                </div>
+            </div>
+
+            <div class="relative w-full max-w-lg mx-auto mt-8 lg:mt-0">
+                <div class="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full"></div>
+                <div class="relative bg-[#05070a] rounded-xl border border-slate-700/50 shadow-2xl overflow-hidden scanlines">
+                    <div class="bg-slate-900 border-b border-slate-800 px-4 py-3 flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        <div class="ml-4 text-xs font-mono text-slate-500">root@sysadmin-server:~</div>
+                    </div>
+                    <div class="p-5 font-mono text-sm sm:text-base leading-relaxed text-cyan-100">
+                        <p class="text-slate-400">$ <span class="text-white">uname -r</span></p>
+                        <p class="text-cyan-400">7.1.0-generic</p>
+                        <p class="mt-3 text-slate-400">$ <span class="text-white">systemctl start sshd nginx docker</span></p>
+                        <p class="text-slate-500">Job for docker.service started successfully.</p>
+                        <p class="mt-3 text-slate-400">$ <span class="text-white">netstat -tulpn | grep LISTEN</span></p>
+                        <p class="text-green-400">tcp  0  0 0.0.0.0:22    0.0.0.0:* LISTEN  1023/sshd</p>
+                        <p class="text-green-400">tcp  0  0 0.0.0.0:80    0.0.0.0:* LISTEN  1055/nginx</p>
+                        <p class="mt-3 text-slate-400">$ <span class="text-white">tail -f /var/log/auth.log</span></p>
+                        <p class="text-slate-300">Accepted publickey for root from 192.168.1.100 port 50123 ssh2</p>
+                        <p class="text-slate-300">pam_unix(sshd:session): session opened for user root</
