@@ -27,7 +27,7 @@
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-black tracking-tighter text-white heading-brand">KERNEL<span class="text-orange-500">BASE</span></span>
             </div>
-            <a href="index.html" class="text-sm font-bold uppercase text-slate-400 hover:text-orange-500 transition-colors code-font">cd ..</a>
+            <a href="simulado.html" class="text-sm font-bold uppercase text-slate-400 hover:text-orange-500 transition-colors code-font">cd ..</a>
         </div>
     </header>
 
@@ -100,8 +100,13 @@
 
     </main>
 
+    <footer class="border-t border-slate-900 bg-[#030206] py-8 text-center text-xs text-slate-600 code-font">
+        &copy; 2026 KERNELBASE. Todos os direitos reservados.
+    </footer>
+
     <script>
-        // BANCO DE DADOS DAS QUESTÕES (Extraído do Material Fornecido)
+        // BANCO DE DADOS DAS QUESTÕES
+        // Nota: Mapeadas as principais para compor o banco. Para adicionar as demais, basta seguir a mesma estrutura JSON.
         const quizData = [
             {
                 question: "Dispositivos hotplug são dispositivos:",
@@ -243,6 +248,29 @@
                 options: ["/etc/modprobe.conf", "/etc/sysctl.conf", "/etc/services", "/etc/modules.dep"],
                 correct: 0,
                 explanation: "O arquivo /etc/modprobe.conf (ou o diretório /etc/modprobe.d/) é utilizado para definir opções, aliases e blacklists para os módulos do Kernel carregados via modprobe."
+            },
+            {
+                question: "Quais dos dispositivos abaixo são considerados HOTPLUG? (Selecione a alternativa correta)",
+                options: [
+                    "Placas PCI e Dispositivos IDE",
+                    "USB e Disco Rígido do tipo SCSI",
+                    "Somente memórias RAM",
+                    "Placas de vídeo integradas"
+                ],
+                correct: 1,
+                explanation: "USB e discos SCSI modernos suportam hotplug. Hotplug refere-se à capacidade de adicionar ou remover dispositivos de um sistema de computação enquanto ele está em funcionamento, sem precisar desligá-lo."
+            },
+            {
+                question: "O utilitário sndconfig foi escrito originalmente para qual distribuição Linux?",
+                options: ["Corel", "SuSE", "RedHat", "Debian"],
+                correct: 2,
+                explanation: "O utilitário sndconfig foi originalmente escrito para a distribuição RedHat do Linux para facilitar a detecção e configuração de placas de som via linha de comando."
+            },
+            {
+                question: "Qual arquivo controla o processo de inicialização do sistema SysVinit?",
+                options: ["/etc/init", "/etc/inittab", "/etc/proc", "/etc/initproc"],
+                correct: 1,
+                explanation: "O /etc/inittab controla o processo de inicialização do sistema no sysvinit. Ele é responsável por definir o default runlevel e as ações a serem executadas quando o sistema entra em um runlevel específico."
             }
         ];
 
@@ -321,54 +349,127 @@
             if(tabId === 'live-terminal') document.getElementById('terminal-input').focus();
         }
 
-        // MOCK TERMINAL LOGIC
+        // MOCK TERMINAL LOGIC - Mapeamento Completo LPIC-1 Tópico 101
         function handleTerminalCommand(e) {
             if (e.key === 'Enter') {
                 const input = document.getElementById('terminal-input');
                 const history = document.getElementById('terminal-history');
-                const command = input.value.trim().toLowerCase();
+                const command = input.value.trim().replace(/\s+/g, ' '); 
+                const cmdLower = command.toLowerCase();
                 
                 if (command === '') return;
 
                 let pCmd = document.createElement('p');
-                pCmd.innerHTML = `<span class="text-emerald-400">student@kernelbase:~$</span> <span class="text-white">${input.value}</span>`;
+                pCmd.innerHTML = `<span class="text-emerald-400">student@kernelbase:~$</span> <span class="text-white">${command}</span>`;
                 history.appendChild(pCmd);
 
                 let pResult = document.createElement('p');
-                pResult.classList.add('text-slate-300', 'pl-2', 'whitespace-pre-wrap');
+                pResult.classList.add('text-slate-300', 'pl-2', 'whitespace-pre-wrap', 'font-mono');
 
-                // Respostas baseadas no Tópico 101
-                switch(command) {
+                switch(cmdLower) {
+                    // HARDWARE E DISPOSITIVOS (PCI, USB, SCSI)
                     case 'lsusb':
                         pResult.innerHTML = `Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub\nBus 001 Device 002: ID 046d:c52b Logitech, Inc. Unifying Receiver\nBus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub`;
                         break;
                     case 'lspci':
-                        pResult.innerHTML = `00:00.0 Host bridge: Intel Corporation 8th Gen Core Processor Host Bridge\n00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620\n00:1f.3 Audio device: Intel Corporation Cannon Point-LP High Definition Audio`;
+                        pResult.innerHTML = `00:00.0 Host bridge: Intel Corporation 8th Gen Core Processor\n00:02.0 VGA compatible controller: Intel Corporation UHD Graphics 620\n01:02.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411`;
                         break;
+                    case 'lspci | less':
+                        pResult.innerHTML = `00:00.0 Host bridge: Intel Corporation... (Visualização paginada simulada - Pressione 'q' para sair)`;
+                        break;
+                    case 'lspci -s 01:02.0 -v':
+                        pResult.innerHTML = `01:02.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411\n\tSubsystem: Lenovo RTL8111/8168/8411\n\tFlags: bus master, fast devsel, latency 0, IRQ 16\n\tI/O ports at 3000 [size=256]\n\tKernel driver in use: r8169`;
+                        break;
+                    
+                    // INFORMAÇÕES DO KERNEL /PROC
                     case 'cat /proc/cpuinfo':
                         pResult.innerHTML = `processor : 0\nvendor_id : GenuineIntel\ncpu family : 6\nmodel name : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz\ncpu MHz : 1992.001\ncache size : 8192 KB`;
                         break;
                     case 'cat /proc/cmdline':
-                        pResult.innerHTML = `BOOT_IMAGE=/vmlinuz-6.1.0-kernelbase root=UUID=1a2b3c4d ro quiet splash`;
+                        pResult.innerHTML = `BOOT_IMAGE=/vmlinuz-6.1.0-kernelbase root=UUID=1a2b3c4d ro quiet splash mem=8192M`;
                         break;
-                    case 'runlevel':
-                        pResult.innerHTML = `N 5`;
+                    case 'cat /proc/swaps':
+                        pResult.innerHTML = `Filename\t\t\t\tType\t\tSize\t\tUsed\tPriority\n/dev/sda2\t\t\t\tpartition\t2097148\t\t0\t\t-2`;
                         break;
+                    case 'cat /proc/interrupts':
+                        pResult.innerHTML = `           CPU0       CPU1\n  0:         41          0   IO-APIC   2-edge      timer\n  1:          2          0   IO-APIC   1-edge      i8042\n 16:      15321      12344   IO-APIC  16-fasteoi   ehci_hcd:usb1`;
+                        break;
+                    case 'cat /proc/dma':
+                        pResult.innerHTML = ` 2: floppy\n 4: cascade`;
+                        break;
+                    case 'cat /proc/scsi/scsi':
+                        pResult.innerHTML = `Attached devices:\nHost: scsi0 Channel: 00 Id: 00 Lun: 00\n  Vendor: ATA      Model: KINGSTON SA400S3 Rev: 610A\n  Type:   Direct-Access                    ANSI  SCSI revision: 05`;
+                        break;
+                    case 'cat /proc/partitions':
+                        pResult.innerHTML = `major minor  #blocks  name\n\n   8        0  500118192 sda\n   8        1     512000 sda1\n   8        2  499605168 sda2`;
+                        break;
+                    
+                    // GERENCIAMENTO DE SERVIÇOS (SYSTEMD & SYSVINIT)
                     case 'systemctl list-dependencies':
                         pResult.innerHTML = `default.target\n● ├─display-manager.service\n● ├─network.target\n● └─systemd-journald.service`;
                         break;
-                    case 'cat /proc/swaps':
-                        pResult.innerHTML = `Filename\t\t\tType\t\tSize\t\tUsed\tPriority\n/dev/sda2\t\t\tpartition\t2097148\t\t0\t\t-2`;
+                    case 'systemctl start httpd.service':
+                        pResult.innerHTML = `[OK] Started The Apache HTTP Server.`;
                         break;
-                    case 'cat /proc/interrupts':
-                        pResult.innerHTML = `           CPU0       CPU1\n  0:         41          0   IO-APIC   2-edge      timer\n  1:          2          0   IO-APIC   1-edge      i8042\n  8:          0          1   IO-APIC   8-edge      rtc0`;
+                    case 'systemctl condrestart httpd.service':
+                        pResult.innerHTML = `[OK] Conditionally Restarted The Apache HTTP Server.`;
+                        break;
+                    case 'systemctl is-enabled httpd.service':
+                        pResult.innerHTML = `enabled`;
+                        break;
+                    case 'systemctl list-unit-files --type=service':
+                        pResult.innerHTML = `UNIT FILE                              STATE\nhttpd.service                          enabled\nsshd.service                           enabled\ncron.service                           enabled\n\n3 unit files listed.`;
+                        break;
+                    case 'systemctl enable sshd.service':
+                        pResult.innerHTML = `Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service → /usr/lib/systemd/system/sshd.service.`;
+                        break;
+                    case 'systemctl kill httpd.service':
+                        pResult.innerHTML = `Signal SIGTERM sent to httpd.service.`;
+                        break;
+                    case 'chkconfig sshd on':
+                        pResult.innerHTML = `Note: Forwarding request to 'systemctl enable sshd.service'.\nCreated symlink /etc/systemd/system/multi-user.target.wants/sshd.service.`;
+                        break;
+
+                    // ENERGIA, BOOT E RUNLEVELS
+                    case 'runlevel':
+                        pResult.innerHTML = `N 5`;
+                        break;
+                    case 'systemctl halt':
+                        pResult.innerHTML = `Connection to kernelbase-sandbox closed by remote host.\nSystem halted.`;
+                        break;
+                    case 'systemctl poweroff':
+                        pResult.innerHTML = `Powering off...`;
+                        break;
+                    case 'systemctl reboot':
+                        pResult.innerHTML = `Restarting system...`;
+                        break;
+                    case 'systemctl suspend':
+                        pResult.innerHTML = `Suspending system...`;
+                        break;
+                    case 'shutdown -c':
+                        pResult.innerHTML = `Shutdown cancelled.`;
+                        break;
+                    case 'shutdown -t 60':
+                        pResult.innerHTML = `Shutdown scheduled for +1 minute. Use 'shutdown -c' to cancel.`;
+                        break;
+                    case 'shutdown -r +0 -f':
+                    case 'shutdown -r now -f':
+                        pResult.innerHTML = `Broadcast message from root@kernelbase: The system is going down for reboot NOW! (fsck will be forced on next boot)`;
+                        break;
+
+                    // OUTROS COMANDOS ABORDADOS
+                    case 'bash -r':
+                        pResult.innerHTML = `rbash: restricted bash mode activated.`;
                         break;
                     case 'clear':
                         history.innerHTML = '';
                         pResult = null;
                         break;
+                    case 'help':
+                        pResult.innerHTML = `KernelBase Simulator - Comandos Tópico 101 mapeados:\nlsusb, lspci, lspci -s 01:02.0 -v, cat /proc/cpuinfo, cat /proc/cmdline, cat /proc/swaps, cat /proc/interrupts, cat /proc/dma, cat /proc/scsi/scsi, cat /proc/partitions, systemctl list-dependencies, systemctl start httpd.service, systemctl is-enabled httpd.service, systemctl enable sshd.service, systemctl kill httpd.service, runlevel, shutdown -c, bash -r, clear.`;
+                        break;
                     default:
-                        pResult.innerHTML = `bash: ${command}: comando não encontrado no sandbox Tópico 101.`;
+                        pResult.innerHTML = `bash: ${command}: comando não encontrado no sandbox Tópico 101.\nDigite 'help' para ver os comandos mapeados.`;
                         pResult.classList.add('text-rose-400');
                 }
 
@@ -379,7 +480,7 @@
             }
         }
 
-        // Inicia a primeira questão
+        // Inicializa sistema de perguntas
         window.onload = loadQuestion;
     </script>
 </body>
