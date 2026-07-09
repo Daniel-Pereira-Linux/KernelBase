@@ -13,7 +13,7 @@
             background-color: #050409;
             background-image: 
                 radial-gradient(circle at 80% 20%, #1a153a 0%, #050409 100%),
-                radial-gradient(circle at 20% 80%, #0d2018 0%, #050409 100__);
+                radial-gradient(circle at 20% 80%, #0d2018 0%, #050409 100%);
             font-family: 'Space Grotesk', sans-serif;
         }
         .heading-brand {
@@ -38,7 +38,6 @@
             background: #1e1e2e;
             border-bottom: 1px solid #313244;
         }
-        /* Esconder input radio padrão para usar botões customizados */
         .payment-method input[type="radio"] {
             display: none;
         }
@@ -51,12 +50,10 @@
 </head>
 <body class="text-slate-200 antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
-    <!-- BARRA DE AVISO TOPO -->
     <div class="bg-gradient-to-r from-orange-600 to-amber-600 text-center py-2 px-4 text-xs font-bold tracking-wider text-white uppercase code-font animate-pulse">
         ⚡ [root@kernelbase]# init 6 --force # Mentoria inédita. Garanta sua vaga com preço de lançamento!
     </div>
 
-    <!-- NAVBAR -->
     <header class="border-b border-slate-800/60 bg-[#050409]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -66,9 +63,6 @@
             </div>
             
             <div class="flex items-center gap-4 sm:gap-6">
-                <a href="simulado.html" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400 hover:text-orange-500 transition-colors code-font">
-                    ./simulado_lpic1.sh
-                </a>
                 <a href="sobre.html" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-300 hover:text-orange-500 transition-colors code-font">
                     ./sobre_o_instrutor.sh
                 </a>
@@ -79,11 +73,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 relative" id="mentoria">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 reveal active">
             
-            <!-- Lado Esquerdo -->
             <div class="space-y-6 text-center lg:text-left">
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
                     <span class="bg-orange-500/10 border border-orange-500/50 text-orange-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider code-font">
@@ -108,7 +100,7 @@
                 </div>
                 
                 <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-white font-bold">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>. Mentoria interativa com foco total em simulação real em ambientes complexos, menos teoria de slide e muito terminal.
+                    Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-white font-bold">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>. Mentoria interativa com foco total em simulação de ambientes complexos, menos teoria de slide e muita mão na massa.
                 </p>
 
                 <div class="pt-2 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
@@ -127,7 +119,6 @@
                 </div>
             </div>
 
-            <!-- Lado Direito: Terminal Status -->
             <div class="relative w-full max-w-md mx-auto lg:ml-auto mt-8 lg:mt-0 reveal active">
                 <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl blur opacity-25"></div>
                 <div class="relative bg-[#0f0e17] rounded-xl border border-slate-800/80 overflow-hidden shadow-2xl">
@@ -169,7 +160,6 @@
             </div>
         </div>
 
-        <!-- SEÇÃO: METODOLOGIA -->
         <div class="mt-32">
             <div class="text-center mb-12 reveal">
                 <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_APRENDA_COM_QUEM_CONSTRÓI_O_KERNEL</span>
@@ -177,25 +167,21 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
                     <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x01</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Debates ao Vivo</h3>
                     <p class="text-slate-400 text-sm font-light">Interação cirúrgica em tempo real via reuniões estruturadas. Sem enrolação de slide.</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
                     <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x02</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Casos Reais</h3>
                     <p class="text-slate-400 text-sm font-light">Troubleshooting pesado simulando a infraestrutura de missão crítica e servidores reais.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
                     <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x03</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Networking</h3>
                     <p class="text-slate-400 text-sm font-light">Ecossistema fechado com profissionais de alto nível trocando vivências de produção.</p>
                 </div>
-                <!-- Card 4 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
                     <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x04</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Gravação Vitalícia</h3>
@@ -204,14 +190,12 @@
             </div>
         </div>
 
-        <!-- EMENTA TÉCNICA -->
         <div class="mt-32 relative z-10">
             <div class="text-center mb-12 reveal">
                 <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_CONTEÚDO_PROGRAMÁTICO</span>
                 <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Grade do Treinamento</h2>
             </div>
 
-            <!-- Grid de Tópicos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
                 <div class="bg-[#110f1a] border border-slate-800/60 p-5 rounded-lg hover:border-slate-700 transition-colors reveal">
                     <h3 class="text-orange-500 font-bold text-sm mb-3"># Tópico 101: Arquitetura</h3>
@@ -275,7 +259,6 @@
             </div>
         </div>
 
-        <!-- SEÇÃO: FORMULÁRIO DE INSCRIÇÃO VIA TERMINAL -->
         <div class="mt-32 max-w-2xl mx-auto relative z-10 reveal" id="checkout-section">
             <div class="text-center mb-8">
                 <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_PROVISION_ACCOUNT</span>
@@ -294,19 +277,16 @@
                 </div>
 
                 <div class="p-6 sm:p-8 space-y-5">
-                    <!-- Nome Completo -->
                     <div class="space-y-1 font-mono text-xs sm:text-sm">
                         <label class="text-slate-400 block font-bold">// NOME_COMPLETO:</label>
                         <input type="text" id="student-name" class="w-full bg-[#050409] border border-slate-800 focus:border-orange-500 focus:outline-none text-white p-3 rounded transition-colors" placeholder="Ex: Linus Torvalds">
                     </div>
 
-                    <!-- Email -->
                     <div class="space-y-1 font-mono text-xs sm:text-sm">
                         <label class="text-slate-400 block font-bold">// EMAIL_CONTATO:</label>
                         <input type="email" id="student-email" class="w-full bg-[#050409] border border-slate-800 focus:border-orange-500 focus:outline-none text-white p-3 rounded transition-colors" placeholder="Ex: linus@kernel.org">
                     </div>
 
-                    <!-- Forma de Pagamento -->
                     <div class="space-y-2 font-mono text-xs sm:text-sm">
                         <label class="text-slate-400 block font-bold">// METODO_PAGAMENTO:</label>
                         <div class="grid grid-cols-2 gap-4">
@@ -328,7 +308,6 @@
                         </div>
                     </div>
 
-                    <!-- Botão de Envio -->
                     <div class="pt-4">
                         <button onclick="sendEnrollment()" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm uppercase tracking-wider py-4 rounded transition-all shadow-xl shadow-orange-600/10 glow-orange code-font">
                             [EXECUTE] Finalizar Inscrição
@@ -341,12 +320,10 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="border-t border-slate-900 bg-[#030206] py-8 text-center text-xs text-slate-600 code-font">
         &copy; 2026 KERNELBASE. Todos os direitos reservados. Engenharia de Sistemas Raiz.
     </footer>
 
-    <!-- LOGIC SCRIPTS -->
     <script>
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
@@ -393,21 +370,18 @@
 
             errorDiv.classList.add('hidden');
 
-            // Validação simples de campos obrigatórios
             if (!name || !email || !payment) {
                 errorDiv.innerHTML = "❌ ERRO: Preencha todos os campos e selecione a forma de pagamento.";
                 errorDiv.classList.remove('hidden');
                 return;
             }
 
-            // Montagem da String da mensagem com formatação limpa
             const phone = "5583933003583";
             const text = `Olá Daniel! Tenho interesse na Mentoria KernelBase.\n\n` +
                          `👤 Nome: ${name}\n` +
                          `📧 E-mail: ${email}\n` +
                          `💳 Pagamento: ${payment.value}`;
 
-            // Encoding para URL do WhatsApp e redirecionamento seguro
             const encodedText = encodeURIComponent(text);
             const whatsappUrl = `https://wa.me/${phone}?text=${encodedText}`;
 
