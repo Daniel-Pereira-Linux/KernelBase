@@ -7,15 +7,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@800;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #09080e;
-            background-image: radial-gradient(circle at 80% 20%, #151221 0%, #09080e 100%);
+            background-color: #050409;
+            background-image: 
+                radial-gradient(circle at 80% 20%, #1a153a 0%, #050409 100%),
+                radial-gradient(circle at 20% 80%, #0d2018 0%, #050409 100%);
             font-family: 'Space Grotesk', sans-serif;
         }
         .heading-brand {
             font-family: 'Urbanist', sans-serif;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
         }
         .reveal {
             opacity: 0;
@@ -26,29 +31,36 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .glow-orange:hover {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+        .terminal-header {
+            background: #1e1e2e;
+            border-bottom: 1px solid #313244;
+        }
     </style>
 </head>
 <body class="text-slate-200 antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden">
 
     <!-- BARRA DE AVISO TOPO -->
-    <div class="bg-gradient-to-r from-orange-600 to-amber-600 text-center py-2 px-4 text-xs font-bold tracking-wider text-white uppercase">
-        ⚡ Mentoria inédita. Garanta sua vaga com preço especial de lançamento!
+    <div class="bg-gradient-to-r from-orange-600 to-amber-600 text-center py-2 px-4 text-xs font-bold tracking-wider text-white uppercase code-font animate-pulse">
+        ⚡ [root@kernelbase]# init 6 --force # Mentoria inédita. Garanta sua vaga com preço de lançamento!
     </div>
 
-    <!-- NAVBAR LINUXTIPS STYLE -->
-    <header class="border-b border-slate-800/60 bg-[#09080e]/90 backdrop-blur-md sticky top-0 z-50">
+    <!-- NAVBAR -->
+    <header class="border-b border-slate-800/60 bg-[#050409]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-black tracking-tighter text-white heading-brand">
-                    LINUX<span class="text-orange-500">BASE</span>
+                    KERNEL<span class="text-orange-500">BASE</span>
                 </span>
             </div>
             
             <div class="flex items-center gap-6">
-                <a href="sobre.html" class="text-sm font-bold uppercase tracking-wider text-slate-300 hover:text-orange-500 transition-colors">
-                    Sobre o Instrutor
+                <a href="sobre.html" class="text-sm font-bold uppercase tracking-wider text-slate-300 hover:text-orange-500 transition-colors code-font">
+                    ./sobre_o_instrutor.sh
                 </a>
-                <a href="#mentoria" class="bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-lg shadow-orange-600/20">
+                <a href="#mentoria" class="bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-lg shadow-orange-600/20 glow-orange">
                     Matricular-se
                 </a>
             </div>
@@ -59,14 +71,14 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 relative" id="mentoria">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 reveal active">
             
-            <!-- Lado Esquerdo: Copy e Estrutura Linuxtips -->
+            <!-- Lado Esquerdo -->
             <div class="space-y-6 text-center lg:text-left">
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                    <span class="bg-emerald-500/10 border border-emerald-500 text-emerald-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">
-                        CONDIÇÃO ESPECIAL DE LANÇAMENTO
+                    <span class="bg-orange-500/10 border border-orange-500/50 text-orange-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider code-font">
+                        # READY_FOR_DEPLOYMENT
                     </span>
-                    <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-slate-700">
-                        3ª Turma de 2026
+                    <span class="bg-slate-800 text-slate-300 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border border-slate-700 code-font">
+                        v3.2026
                     </span>
                 </div>
                 
@@ -77,107 +89,170 @@
                     </span>
                 </h1>
 
-                <!-- BADGES DE ESPECIFICAÇÃO -->
-                <div class="flex flex-wrap justify-center lg:justify-start gap-2 font-mono text-xs text-slate-400">
-                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded">⏱ DURAÇÃO DE 3 MESES</span>
-                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded">💻 COM PROJETO PRÁTICO</span>
-                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded">📜 CERTIFICADO INCLUSO</span>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 font-mono text-xs text-slate-400 code-font">
+                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-emerald-400">✔ UPTIME: 3 MESES</span>
+                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-amber-400">⚡ LABS PRÁTICOS</span>
+                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-sky-400">📜 CERT_ISSUED=TRUE</span>
                 </div>
                 
                 <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
                     Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-white font-bold">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>. Mentoria interativa com foco total em simulação real em ambientes complexos, menos teoria de slide e muito terminal.
                 </p>
 
-                <!-- BOTÃO DE INSCRIÇÃO LINUXTIPS (LARANJA MACIÇO) -->
                 <div class="pt-2 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
                     <a href="https://wa.me/5583933003583?text=ol%C3%A1%20possuo%20interesse%20na%20mentoria" 
                        target="_blank" 
-                       class="bg-orange-600 hover:bg-orange-500 text-white text-base font-bold uppercase tracking-wider px-8 py-4 rounded transition-all duration-200 shadow-xl shadow-orange-600/30 text-center w-full sm:w-auto flex items-center justify-center gap-3">
+                       class="bg-orange-600 hover:bg-orange-500 text-white text-base font-bold uppercase tracking-wider px-8 py-4 rounded transition-all duration-200 shadow-xl shadow-orange-600/30 text-center w-full sm:w-auto flex items-center justify-center gap-3 glow-orange">
                         Matricule-se Já!
                     </a>
                     
-                    <!-- Preço Integrado Moderno -->
                     <div class="text-left bg-slate-900/50 border border-slate-800 p-2 px-4 rounded flex items-center gap-3">
-                        <span class="text-slate-500 text-[10px] uppercase block font-bold leading-none">Acesso<br>Único</span>
+                        <span class="text-slate-500 text-[10px] uppercase block font-bold leading-none code-font">COST<br>PER_USER</span>
                         <div class="flex items-baseline">
-                            <span class="text-xs text-slate-400 mr-1">R$</span>
-                            <span class="text-2xl font-black text-white">200</span>
+                          <span class="text-xs text-slate-400 mr-1">R$</span>
+                          <span class="text-2xl font-black text-white heading-brand">200</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Lado Direito: Container de Infos Estilo Grid LINUXtips -->
+            <!-- Lado Direito: Terminal Interativo Estilizado -->
             <div class="relative w-full max-w-md mx-auto lg:ml-auto mt-8 lg:mt-0 reveal active">
-                <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-2xl blur opacity-20"></div>
-                <div class="relative bg-[#110f1a] rounded-xl border border-slate-800 p-6 space-y-6">
-                    <div>
-                        <span class="text-xs font-bold text-orange-500 tracking-widest uppercase block mb-1">_CRONOGRAMA DO CURSO</span>
-                        <p class="text-white font-bold text-lg">Aulas de Terça a Quinta às 20h</p>
-                    </div>
-
-                    <!-- Contador Regressivo Customizado -->
-                    <div class="border-t border-slate-800/80 pt-4">
-                        <p class="text-slate-400 text-xs font-bold mb-2 uppercase tracking-wider">> Início das aulas em 01/Novembro</p>
-                        <div class="grid grid-cols-2 gap-3 text-center font-mono">
-                            <div class="bg-[#09080e] border border-slate-800 rounded p-2">
-                                <span id="countdown-days" class="block text-2xl font-black text-white">00</span>
-                                <span class="text-[10px] text-slate-500 uppercase font-bold">Dias</span>
-                            </div>
-                            <div class="bg-[#09080e] border border-slate-800 rounded p-2">
-                                <span id="countdown-hours" class="block text-2xl font-black text-white">00</span>
-                                <span class="text-[10px] text-slate-500 uppercase font-bold">Horas</span>
-                            </div>
+                <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl blur opacity-25"></div>
+                <div class="relative bg-[#0f0e17] rounded-xl border border-slate-800/80 overflow-hidden shadow-2xl">
+                    <div class="terminal-header px-4 py-3 flex items-center justify-between">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                         </div>
-                        <p class="text-center text-rose-400 text-xs font-bold uppercase tracking-wider mt-3 animate-pulse">⚠ Vagas estritamente limitadas</p>
+                        <span class="text-xs text-slate-500 code-font">daniel@kernelbase:~</span>
+                        <div class="w-12"></div>
+                    </div>
+                    <div class="p-6 space-y-4 code-font text-xs sm:text-sm">
+                        <div>
+                            <span class="text-emerald-400">daniel@kernelbase:~$</span> <span class="text-white">systemctl status mentoria</span>
+                        </div>
+                        <div class="text-slate-400 pl-4 space-y-1">
+                            <p>● mentoria.service - KernelBase SysAdmin Mentorship</p>
+                            <p class="text-emerald-400">Active: active (running) since Jul 2026</p>
+                            <p>Main PID: 2026 (live_classes)</p>
+                            <p>Tasks:  Tuesdays to Thursdays @ 20:00 BRT</p>
+                        </div>
+                        <div class="border-t border-slate-800/80 pt-4">
+                            <p class="text-slate-500 text-[11px] mb-2 uppercase tracking-wider">// COUNTDOWN_TO_BOOT</p>
+                            <div class="grid grid-cols-2 gap-3 text-center font-mono">
+                                <div class="bg-[#050409] border border-slate-800 rounded p-2">
+                                    <span id="countdown-days" class="block text-xl font-bold text-orange-500">00</span>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold">Days</span>
+                                </div>
+                                <div class="bg-[#050409] border border-slate-800 rounded p-2">
+                                    <span id="countdown-hours" class="block text-xl font-bold text-orange-500">00</span>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold">Hours</span>
+                                </div>
+                            </div>
+                            <p class="text-center text-rose-400 text-xs font-bold uppercase tracking-wider mt-3 animate-pulse"># CRITICAL: Vagas Limitadas</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SEÇÃO: NOSSA METODOLOGIA (Cards LINUXtips Style) -->
+        <!-- SEÇÃO: METODOLOGIA -->
         <div class="mt-32">
             <div class="text-center mb-12 reveal">
-                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1">_APRENDA COM QUEM VIVE TECNOLOGIA</span>
+                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_APRENDA_COM_QUEM_CONSTRÓI_O_KERNEL</span>
                 <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Formato de Mentoria Dinâmica</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
-                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold">// 01</div>
+                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x01</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Debates ao Vivo</h3>
-                    <p class="text-slate-400 text-sm font-light">Esqueça aulas gravadas e engessadas. Interação em tempo real via reuniões dinâmicas.</p>
+                    <p class="text-slate-400 text-sm font-light">Interação cirúrgica em tempo real via reuniões estruturadas. Sem enrolação de slide.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
-                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold">// 02</div>
+                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x02</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Casos Reais</h3>
-                    <p class="text-slate-400 text-sm font-light">Resolução de problemas de infraestrutura crítica simulando o dia a dia de um SRE.</p>
+                    <p class="text-slate-400 text-sm font-light">Troubleshooting pesado simulando a infraestrutura de missão crítica e servidores reais.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
-                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold">// 03</div>
+                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x03</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Networking</h3>
-                    <p class="text-slate-400 text-sm font-light">Contato direto com outros profissionais do ecossistema de infraestrutura e Linux.</p>
+                    <p class="text-slate-400 text-sm font-light">Ecossistema fechado com profissionais de alto nível trocando vivências de produção.</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="bg-[#110f1a] border border-slate-800/80 p-6 rounded-lg hover:border-orange-500/40 transition-all duration-300 reveal">
-                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold">// 04</div>
+                    <div class="text-orange-500 mb-4 font-mono text-lg font-bold code-font"># 0x04</div>
                     <h3 class="text-white font-bold text-lg mb-2 uppercase">Gravação Vitalícia</h3>
-                    <p class="text-slate-400 text-sm font-light">Assista e revise o conteúdo gravado das mentorias sempre que precisar, sem expiração.</p>
+                    <p class="text-slate-400 text-sm font-light">Acesso permanente ao acervo gravado para você consultar sempre que o bicho pegar no plantão.</p>
                 </div>
             </div>
         </div>
 
-        <!-- EMENTA TÉCNICA DO CURSO -->
+        <!-- SEÇÃO: SIMULADO LPIC-1 INTERATIVO -->
+        <div class="mt-32 relative z-10" id="lpic-section">
+            <div class="text-center mb-12 reveal">
+                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_CERTIFICATION_PREP</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Simulador de Questões LPIC-1</h2>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2 font-light">Baseado no nosso banco de 90 questões de fixação. Teste seus conhecimentos agora:</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-[#110f1a] border border-slate-800 p-6 sm:p-8 rounded-xl shadow-xl relative">
+                <div class="absolute top-0 right-4 transform -translate-y-1/2 bg-orange-600 text-white text-[10px] font-bold tracking-widest px-2 py-0.5 rounded code-font uppercase">
+                    Questão de Exemplo
+                </div>
+                
+                <div class="code-font text-xs text-slate-500 mb-4 uppercase">🚀 Tópico 103.1: Trabalhar na linha de comando</div>
+                
+                <h3 class="text-white font-bold text-base sm:text-lg mb-6 leading-relaxed">
+                    Qual das seguintes alternativas descreve corretamente a função do comando <code class="bg-slate-900 text-orange-400 px-1.5 py-0.5 rounded text-sm border border-slate-800/60 font-mono">nohup</code> no Shell Linux?
+                </h3>
+
+                <!-- Lista de Múltipla Escolha -->
+                <div class="space-y-3 font-mono text-xs sm:text-sm">
+                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
+                        <input type="radio" name="lpic_q1" value="A" class="mt-1 accent-orange-500 shrink-0">
+                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">A)</strong> Envia um sinal SIGKILL imediatamente para interromper a execução de um script em background.</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
+                        <input type="radio" name="lpic_q1" value="B" class="mt-1 accent-orange-500 shrink-0">
+                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">B)</strong> Permite que um comando continue rodando mesmo após o usuário fazer logout do terminal, ignorando o sinal SIGHUP.</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
+                        <input type="radio" name="lpic_q1" value="C" class="mt-1 accent-orange-500 shrink-0">
+                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">C)</strong> Configura uma tarefa recorrente no agendador Cron do sistema operacional de forma interativa.</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
+                        <input type="radio" name="lpic_q1" value="D" class="mt-1 accent-orange-500 shrink-0">
+                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">D)</strong> Altera o nível de prioridade (niceness) de um processo que já se encontra em execução no Kernel.</span>
+                    </label>
+                </div>
+
+                <!-- Botão de Verificação -->
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <button onclick="checkLPICAnswer()" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded transition-colors code-font border border-slate-700">
+                        [EXECUTE] Validar Resposta
+                    </button>
+                    <div id="lpic-feedback" class="text-sm font-bold code-font hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMENTA TÉCNICA -->
         <div class="mt-32 relative z-10">
             <div class="text-center mb-12 reveal">
-                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1">_CONTEÚDO PROGRAMÁTICO</span>
+                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_CONTEÚDO_PROGRAMÁTICO</span>
                 <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Grade do Treinamento</h2>
             </div>
 
-            <!-- Grid de Tópicos da Ementa -->
+            <!-- Grid de Tópicos -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
                 <div class="bg-[#110f1a] border border-slate-800/60 p-5 rounded-lg hover:border-slate-700 transition-colors reveal">
                     <h3 class="text-orange-500 font-bold text-sm mb-3"># Tópico 101: Arquitetura</h3>
@@ -240,17 +315,17 @@
                 </div>
             </div>
             
-            <!-- BANNER DE FECHAMENTO (CALL TO ACTION) -->
+            <!-- CALL TO ACTION -->
             <div class="mt-16 bg-gradient-to-r from-[#171426] to-[#110f1a] border border-slate-800 p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6 reveal">
                 <div>
                     <h3 class="text-xl font-bold text-white uppercase tracking-wide mb-1">
-                        Garanta 90 questões práticas de fixação
+                        Domine a Infraestrutura Raiz
                     </h3>
-                    <p class="text-slate-400 text-sm max-w-xl font-light">Consolide totalmente o seu conhecimento operacional e receba o Certificado Oficial de Conclusão emitido pela KernelBase.</p>
+                    <p class="text-slate-400 text-sm max-w-xl font-light">Prepare-se com excelência para o mercado e garanta o material completo com simulados práticos LPIC-1.</p>
                 </div>
                 <div class="shrink-0 w-full md:w-auto">
                     <a href="https://wa.me/5583933003583?text=ol%C3%A1%20possuo%20interesse%20na%20mentoria" 
-                       target="_blank" class="block text-center bg-orange-600 hover:bg-orange-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded transition-all shadow-lg shadow-orange-600/10">
+                       target="_blank" class="block text-center bg-orange-600 hover:bg-orange-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded transition-all shadow-lg shadow-orange-600/10 glow-orange">
                         Matricular por R$ 200
                     </a>
                 </div>
@@ -259,11 +334,11 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-900 bg-[#06050a] py-8 text-center text-xs text-slate-600">
-        &copy; 2026 LINUXBASE / KernelBase. Todos os direitos reservados. Engenharia de Sistemas Raiz.
+    <footer class="border-t border-slate-900 bg-[#030206] py-8 text-center text-xs text-slate-600 code-font">
+        &copy; 2026 KERNELBASE. Todos os direitos reservados. Engenharia de Sistemas Raiz.
     </footer>
 
-    <!-- SCRIPT DE ANIMAÇÃO E CRONÔMETRO -->
+    <!-- LOGIC SCRIPTS -->
     <script>
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
@@ -300,6 +375,28 @@
                 document.getElementById("countdown-hours").innerHTML = "00";
             }
         }, 1000);
+
+        // Lógica Interativa do Simulado
+        function checkLPICAnswer() {
+            const selected = document.querySelector('input[name="lpic_q1"]:checked');
+            const feedback = document.getElementById('lpic-feedback');
+            
+            feedback.classList.remove('hidden', 'text-emerald-400', 'text-rose-400');
+            
+            if (!selected) {
+                feedback.innerHTML = "❌ STATUS: Escolha uma alternativa antes de executar.";
+                feedback.classList.add('text-rose-400');
+                return;
+            }
+            
+            if (selected.value === "B") {
+                feedback.innerHTML = "✔ STATUS_SUCCESS: Correto! O 'nohup' encaminha a saída para o nohup.out e previne o encerramento do processo com o SIGHUP.";
+                feedback.classList.add('text-emerald-400');
+            } else {
+                feedback.innerHTML = "❌ STATUS_FAIL: Resposta incorreta. Revise o comportamento dos sinais de processos Unix no Tópico 103.";
+                feedback.classList.add('text-rose-400');
+            }
+        }
     </script>
 </body>
 </html>
