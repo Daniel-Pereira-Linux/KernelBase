@@ -3,216 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KernelBase // Simulação LPIC-1 & Labs</title>
+    <title>KernelBase // Central de Simulados LPIC-1</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@800;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #050409;
-            background-image: radial-gradient(circle at 50% 30%, #121021 0%, #050409 100__);
+            background-image: radial-gradient(circle at 50% 0%, #151221 0%, #050409 100%);
             font-family: 'Space Grotesk', sans-serif;
         }
-        .heading-brand {
-            font-family: 'Urbanist', sans-serif;
-        }
-        .code-font {
-            font-family: 'Fira Code', monospace;
-        }
-        .tab-btn.active {
-            border-color: #f97316;
-            color: #ffffff;
-            background-color: #110f1a;
-        }
+        .heading-brand { font-family: 'Urbanist', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .glow-hover:hover { box-shadow: 0 0 15px rgba(249, 115, 22, 0.3); border-color: #f97316; }
     </style>
 </head>
 <body class="text-slate-200 antialiased selection:bg-orange-500 selection:text-white min-h-screen flex flex-col">
 
+    <!-- NAVBAR -->
     <header class="border-b border-slate-800/60 bg-[#050409]/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-black tracking-tighter text-white heading-brand">
                     KERNEL<span class="text-orange-500">BASE</span>
                 </span>
             </div>
-            <a href="index.html" class="text-sm font-bold uppercase text-slate-400 hover:text-orange-500 transition-colors flex items-center gap-1 code-font">
-                cd ..
+            <a href="index.html" class="text-sm font-bold uppercase text-slate-400 hover:text-orange-500 transition-colors code-font">
+                cd /home
             </a>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 w-full">
         
-        <div class="text-center md:text-left mb-8">
-            <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_LABORATORY_ENVIRONMENT</span>
-            <h1 class="text-4xl font-black text-white uppercase tracking-tight heading-brand">Ambiente de Simulação Prática</h1>
+        <div class="text-center mb-16">
+            <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-2 code-font">_CHOOSE_YOUR_BATTLE</span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight heading-brand">Central de Simulados</h1>
+            <p class="text-slate-400 mt-4 max-w-2xl mx-auto font-light">Selecione o tópico que deseja treinar. Cada módulo possui um ambiente prático de terminal e questões baseadas nos exames oficiais de certificação Linux.</p>
         </div>
 
-        <div class="flex border-b border-slate-800 mb-8 font-mono text-xs sm:text-sm overflow-x-auto">
-            <button onclick="switchTab('lpic-quiz')" id="tab-lpic-quiz" class="tab-btn active px-6 py-3.5 border-b-2 border-transparent text-slate-400 hover:text-white transition-all whitespace-nowrap">
-                [01] Simulado LPIC-1
-            </button>
-            <button onclick="switchTab('live-terminal')" id="tab-live-terminal" class="tab-btn px-6 py-3.5 border-b-2 border-transparent text-slate-400 hover:text-white transition-all whitespace-nowrap">
-                [02] Terminal Playground
-            </button>
-        </div>
-
-        <div id="content-lpic-quiz" class="tab-content space-y-6">
-            <div class="bg-[#110f1a] border border-slate-800 p-6 sm:p-8 rounded-xl shadow-xl relative">
-                
-                <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
-                    <span class="text-orange-500 font-bold text-xs uppercase code-font">⚡ Tópico 103.1: Command Line</span>
-                    <span class="bg-slate-900 border border-slate-800 px-2.5 py-1 rounded text-[11px] code-font text-slate-400">QUESTÃO 01 DE 90</span>
+        <!-- GRID DE TÓPICOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- CARD TÓPICO 101 -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 glow-hover group relative overflow-hidden flex flex-col justify-between h-full">
+                <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 border-l border-b border-emerald-500/30 px-3 py-1 rounded-bl-lg text-[10px] font-bold uppercase tracking-wider code-font">
+                    Online
                 </div>
-
-                <h3 class="text-white font-bold text-base sm:text-lg mb-6 leading-relaxed">
-                    Um Administrador de Sistemas precisa monitorar o arquivo de logs do Kernel em tempo real para diagnosticar uma falha de hardware. Qual comando atinge esse objetivo de forma contínua?
-                </h3>
-
-                <div class="space-y-3 font-mono text-xs sm:text-sm">
-                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
-                        <input type="radio" name="lpic_q" value="A" class="mt-1 accent-orange-500 shrink-0">
-                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">A)</strong> <code class="text-amber-400 bg-slate-900 px-1 rounded">cat /var/log/kern.log</code></span>
-                    </label>
-
-                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
-                        <input type="radio" name="lpic_q" value="B" class="mt-1 accent-orange-500 shrink-0">
-                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">B)</strong> <code class="text-amber-400 bg-slate-900 px-1 rounded">tail -f /var/log/kern.log</code></span>
-                    </label>
-
-                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
-                        <input type="radio" name="lpic_q" value="C" class="mt-1 accent-orange-500 shrink-0">
-                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">C)</strong> <code class="text-amber-400 bg-slate-900 px-1 rounded">head -n 20 /var/log/kern.log</code></span>
-                    </label>
-
-                    <label class="flex items-start gap-3 p-3 rounded border border-slate-800 bg-[#050409]/40 hover:border-slate-700 cursor-pointer transition-colors group">
-                        <input type="radio" name="lpic_q" value="D" class="mt-1 accent-orange-500 shrink-0">
-                        <span class="text-slate-300 group-hover:text-white"><strong class="text-orange-500">D)</strong> <code class="text-amber-400 bg-slate-900 px-1 rounded">grep -i "error" /var/log/kern.log</code></span>
-                    </label>
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">101</h2>
+                    <span class="text-orange-500 font-bold text-xs uppercase code-font block mb-3">> Tópico 101</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Arquitetura de Sistema</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Explore hardware, boot do sistema, interrupções (IRQ), dispositivos SCSI/USB e a diferença entre SysVinit e Systemd.
+                    </p>
                 </div>
-
-                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <button onclick="evaluateQuiz()" class="w-full sm:w-auto bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded transition-colors code-font shadow-lg shadow-orange-600/10">
-                        [EXEC] Enviar Resposta
-                    </button>
-                    <div id="quiz-feedback" class="text-xs sm:text-sm font-bold code-font hidden"></div>
-                </div>
-
+                <!-- Link apontando para o arquivo criado anteriormente -->
+                <a href="simulado_101.html" class="block text-center bg-slate-800 group-hover:bg-orange-600 text-white border border-slate-700 group-hover:border-orange-500 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font">
+                    [EXEC] Iniciar Boot
+                </a>
             </div>
-        </div>
 
-        <div id="content-live-terminal" class="tab-content space-y-6 hidden">
-            <div class="bg-[#0f0e17] rounded-xl border border-slate-800/80 overflow-hidden shadow-2xl">
-                <div class="bg-[#1e1e2e] px-4 py-3 flex items-center justify-between border-b border-slate-800">
-                    <div class="flex gap-1.5">
-                        <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                    </div>
-                    <span class="text-xs text-slate-500 code-font">student@kernelbase-sandbox:~</span>
-                    <div class="w-12"></div>
+            <!-- CARD TÓPICO 102 -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 hover:border-slate-600 group relative overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">102</h2>
+                    <span class="text-slate-500 font-bold text-xs uppercase code-font block mb-3">> Tópico 102</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Instalação e Pacotes</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Layout de partições, gerenciadores de boot (GRUB) e administração de pacotes RPM, YUM e APT/Debian.
+                    </p>
                 </div>
-                
-                <div class="p-6 space-y-4 code-font text-xs sm:text-sm min-h-[250px] flex flex-col justify-between">
-                    <div id="terminal-history" class="space-y-2 text-slate-400">
-                        <p class="text-slate-500"># KernelBase Live Sandbox Environment v1.0</p>
-                        <p class="text-slate-500"># Digite 'help' para listar os comandos simulados disponíveis.</p>
-                    </div>
-                    
-                    <div class="flex items-center gap-2 border-t border-slate-800/60 pt-4">
-                        <span class="text-emerald-400 shrink-0">student@kernelbase:~$</span>
-                        <input type="text" id="terminal-input" onkeydown="handleTerminalCommand(event)" class="bg-transparent text-white focus:outline-none w-full caret-orange-500" placeholder="" autofocus>
-                    </div>
-                </div>
+                <button onclick="alert('Módulo em desenvolvimento! Em breve você poderá colar as questões do 102 aqui.')" class="block w-full text-center bg-[#050409] text-slate-500 border border-slate-800 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font cursor-not-allowed">
+                    Locked
+                </button>
             </div>
-        </div>
 
+            <!-- CARD TÓPICO 103 -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 hover:border-slate-600 group relative overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">103</h2>
+                    <span class="text-slate-500 font-bold text-xs uppercase code-font block mb-3">> Tópico 103</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Comandos Unix</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Linha de comando, processamento de texto com filtros, gerenciamento de arquivos essenciais e prioridade de processos.
+                    </p>
+                </div>
+                <button onclick="alert('Módulo em desenvolvimento!')" class="block w-full text-center bg-[#050409] text-slate-500 border border-slate-800 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font cursor-not-allowed">
+                    Locked
+                </button>
+            </div>
+
+            <!-- CARD TÓPICO 104 -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 hover:border-slate-600 group relative overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">104</h2>
+                    <span class="text-slate-500 font-bold text-xs uppercase code-font block mb-3">> Tópico 104</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Dispositivos e Filesystems</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Criação de partições, montagem de sistemas de arquivos, cotas, permissões de acesso e links físicos/simbólicos.
+                    </p>
+                </div>
+                <button onclick="alert('Módulo em desenvolvimento!')" class="block w-full text-center bg-[#050409] text-slate-500 border border-slate-800 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font cursor-not-allowed">
+                    Locked
+                </button>
+            </div>
+
+            <!-- CARD TÓPICO 105 -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 hover:border-slate-600 group relative overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">105</h2>
+                    <span class="text-slate-500 font-bold text-xs uppercase code-font block mb-3">> Tópico 105</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Shells e Shell Scripting</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Personalização e uso do ambiente shell, criação de scripts Bash simples e gerenciamento de variáveis de ambiente.
+                    </p>
+                </div>
+                <button onclick="alert('Módulo em desenvolvimento!')" class="block w-full text-center bg-[#050409] text-slate-500 border border-slate-800 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font cursor-not-allowed">
+                    Locked
+                </button>
+            </div>
+
+            <!-- CARD TÓPICO 106+ -->
+            <div class="bg-[#110f1a] rounded-xl border border-slate-800 p-6 transition-all duration-300 hover:border-slate-600 group relative overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                    <h2 class="text-3xl font-black text-white/10 absolute right-4 bottom-16 heading-brand pointer-events-none">106+</h2>
+                    <span class="text-slate-500 font-bold text-xs uppercase code-font block mb-3">> Tópicos 106 a 110</span>
+                    <h3 class="text-xl font-bold text-white mb-2">SysAdmin & Redes</h3>
+                    <p class="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                        Administração de usuários, serviços essenciais (Cron), fundamentos TCP/IP, segurança de host e encriptação (GPG).
+                    </p>
+                </div>
+                <button onclick="alert('Módulo em desenvolvimento!')" class="block w-full text-center bg-[#050409] text-slate-500 border border-slate-800 font-bold uppercase text-xs tracking-wider py-3 rounded transition-all code-font cursor-not-allowed">
+                    Locked
+                </button>
+            </div>
+
+        </div>
     </main>
 
+    <!-- FOOTER -->
     <footer class="border-t border-slate-900 bg-[#030206] py-8 text-center text-xs text-slate-600 code-font">
         &copy; 2026 KERNELBASE. Todos os direitos reservados.
     </footer>
 
-    <script>
-        // Troca de Abas
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            document.getElementById('tab-' + tabId).classList.add('active');
-
-            if(tabId === 'live-terminal') {
-                document.getElementById('terminal-input').focus();
-            }
-        }
-
-        // Validação de Questão do Quiz
-        function evaluateQuiz() {
-            const checked = document.querySelector('input[name="lpic_q"]:checked');
-            const feedback = document.getElementById('quiz-feedback');
-            
-            feedback.classList.remove('hidden', 'text-emerald-400', 'text-rose-400');
-            
-            if (!checked) {
-                feedback.innerHTML = "⚠ STATUS: Por favor, selecione uma alternativa.";
-                feedback.classList.add('text-rose-400');
-                return;
-            }
-            
-            if (checked.value === "B") {
-                feedback.innerHTML = "✔ SUCCESS: Correto! O parâmetro '-f' (follow) instrui o tail a ler e apresentar novas linhas adicionadas ao arquivo em tempo real.";
-                feedback.classList.add('text-emerald-400');
-            } else {
-                feedback.innerHTML = "❌ FAILED: Resposta errada. Dica: O comando 'cat' apenas lê o arquivo estático e encerra.";
-                feedback.classList.add('text-rose-400');
-            }
-        }
-
-        // Simulação Básica de Terminal via JavaScript (Frontend)
-        function handleTerminalCommand(e) {
-            if (e.key === 'Enter') {
-                const input = document.getElementById('terminal-input');
-                const history = document.getElementById('terminal-history');
-                const command = input.value.trim();
-                
-                if (command === '') return;
-
-                // Cria elemento do comando digitado
-                let pCmd = document.createElement('p');
-                pCmd.innerHTML = `<span class="text-emerald-400">student@kernelbase:~$</span> <span class="text-white">${command}</span>`;
-                history.appendChild(pCmd);
-
-                // Processa a resposta do comando
-                let pResult = document.createElement('p');
-                pResult.classList.add('text-slate-300', 'pl-2');
-
-                const cmdLower = command.toLowerCase();
-                
-                if (cmdLower === 'help') {
-                    pResult.innerHTML = "Comandos disponíveis: <br>• <span class='text-orange-400'>uname -r</span> - Exibe a versão do Kernel.<br>• <span class='text-orange-400'>ls</span> - Lista o diretório atual.<br>• <span class='text-orange-400'>clear</span> - Limpa o histórico de comandos.<br>• <span class='text-orange-400'>whoami</span> - Exibe o usuário logado.";
-                } else if (cmdLower === 'uname -r') {
-                    pResult.innerHTML = "7.1.0-kernelbase-generic-x86_64";
-                } else if (cmdLower === 'ls') {
-                    pResult.innerHTML = "<span class='text-sky-400 font-bold'>documentos/</span>  <span class='text-sky-400 font-bold'>labs/</span>  simulado_lpic1.txt  README.md";
-                } else if (cmdLower === 'whoami') {
-                    pResult.innerHTML = "student";
-                } else if (cmdLower === 'clear') {
-                    history.innerHTML = '';
-                    pResult = null;
-                } else {
-                    pResult.innerHTML = `bash: ${command}: comando não encontrado ou não mapeado neste ambiente simulado.`;
-                    pResult.classList.add('text-rose-400');
-                }
-
-                if (pResult) history.appendChild(pResult);
-                
-                // Reseta campo e rola a tela do terminal para baixo
-                input.value = '';
-                input.scrollIntoView();
-            }
-        }
-    </script>
 </body>
 </html>
