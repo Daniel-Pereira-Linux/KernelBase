@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KernelBase | Mentoria, Hardware e Licenciamento</title>
+    <title>KernelBase | Treinamento de Alta Performance em Linux</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@800;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@800;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #050409;
@@ -37,25 +37,6 @@
             background-color: rgba(249, 115, 22, 0.1);
             color: #ffffff;
         }
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Transição suave para as abas */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body class="text-slate-200 antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden min-h-screen flex flex-col">
@@ -75,186 +56,134 @@
             </div>
             
             <div class="flex items-center gap-4">
-                <button onclick="switchTab('mentoria')" class="bg-orange-600 hover:bg-orange-500 text-white px-6 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-lg shadow-orange-600/20 glow-orange">
-                    Área do Aluno
-                </button>
-            </div>
-        </div>
-
-        <!-- ABAS DE NAVEGAÇÃO -->
-        <div class="border-t border-slate-800/40 bg-[#0a0812]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <nav class="flex overflow-x-auto scrollbar-hide py-3 gap-2 sm:gap-4 code-font text-xs sm:text-sm font-bold uppercase tracking-wider">
-                    <button onclick="switchTab('mentoria')" id="btn-mentoria" class="tab-btn whitespace-nowrap px-4 py-2 rounded border transition-colors bg-orange-500/10 text-orange-500 border-orange-500/30">
-                        [0] Mentoria
-                    </button>
-                    <button onclick="switchTab('treinamentos')" id="btn-treinamentos" class="tab-btn whitespace-nowrap px-4 py-2 rounded border border-transparent text-slate-400 hover:bg-slate-800 hover:text-white transition-colors">
-                        [1] Treinamentos
-                    </button>
-                    <button onclick="switchTab('hardware')" id="btn-hardware" class="tab-btn whitespace-nowrap px-4 py-2 rounded border border-transparent text-slate-400 hover:bg-slate-800 hover:text-white transition-colors">
-                        [2] Hardware
-                    </button>
-                    <button onclick="switchTab('licencas')" id="btn-licencas" class="tab-btn whitespace-nowrap px-4 py-2 rounded border border-transparent text-slate-400 hover:bg-slate-800 hover:text-white transition-colors">
-                        [3] Licenciamento
-                    </button>
-                </nav>
+                <a href="#inscricao" class="bg-orange-600 hover:bg-orange-500 text-white px-6 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-lg shadow-orange-600/20 glow-orange">
+                    Garantir Minha Vaga
+                </a>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 relative flex-1 w-full">
         
-        <!-- ================= ABA 0: MENTORIA ================= -->
-        <div id="content-mentoria" class="tab-content active">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                <div class="space-y-6 text-center lg:text-left">
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                        <span class="bg-orange-500/10 border border-orange-500/50 text-orange-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider code-font">
-                            # READY_FOR_DEPLOYMENT
-                        </span>
-                    </div>
-                    
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.05] heading-brand uppercase">
-                        Mentoria Completa <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
-                            Linux SysAdmin
-                        </span>
-                    </h1>
-
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 font-mono text-xs text-slate-400 code-font">
-                        <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-emerald-400">✔ UPTIME: 3 MESES</span>
-                        <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-amber-400">⚡ LABS PRÁTICOS</span>
-                    </div>
-                    
-                    <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                        Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-white font-bold">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>. Mentoria interativa com foco total em simulação de ambientes complexos.
-                    </p>
+        <!-- SECTION: HERO/APRESENTAÇÃO -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 mb-20">
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                    <span class="bg-orange-500/10 border border-orange-500/50 text-orange-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider code-font">
+                        # READY_FOR_DEPLOYMENT
+                    </span>
                 </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.05] heading-brand uppercase">
+                    Mentoria Completa <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+                        Linux SysAdmin
+                    </span>
+                </h1>
 
-                <!-- Formulário de Inscrição Direto na Aba -->
-                <div class="relative w-full max-w-md mx-auto lg:ml-auto">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl blur opacity-25"></div>
-                    <div class="relative bg-[#0f0e17] rounded-xl border border-slate-800/80 overflow-hidden shadow-2xl">
-                        <div class="terminal-header px-4 py-3 flex items-center justify-between">
-                            <div class="flex gap-1.5">
-                                <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 code-font">checkout_mentoria.sh</span>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-2 font-mono text-xs text-slate-400 code-font">
+                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-emerald-400">✔ UPTIME: 3 MESES</span>
+                    <span class="border border-slate-800 bg-slate-900/60 px-3 py-1.5 rounded text-amber-400">⚡ LABS PRÁTICOS</span>
+                </div>
+                
+                <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Aprenda do zero ao avançado a administrar sistemas Linux de forma profissional. Instrução <strong class="text-white font-bold">100% AO VIVO</strong> com <strong>Daniel Pereira</strong>. Mentoria interativa com foco total em simulação de ambientes complexos e de missão crítica.
+                </p>
+
+                <div class="pt-2">
+                    <a href="#ementa" class="inline-block border border-slate-700 hover:border-orange-500 hover:text-white px-6 py-3 rounded text-xs font-bold uppercase tracking-wider transition-colors code-font">
+                        [cat] Ver Conteúdo Programático
+                    </a>
+                </div>
+            </div>
+
+            <!-- Formulário de Inscrição Direto -->
+            <div id="inscricao" class="relative w-full max-w-md mx-auto lg:ml-auto scroll-mt-24">
+                <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl blur opacity-25"></div>
+                <div class="relative bg-[#0f0e17] rounded-xl border border-slate-800/80 overflow-hidden shadow-2xl">
+                    <div class="terminal-header px-4 py-3 flex items-center justify-between">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                         </div>
-                        <div class="p-6 space-y-4">
-                            <div class="space-y-1 font-mono text-xs sm:text-sm">
-                                <label class="text-slate-400 block font-bold">// NOME:</label>
-                                <input type="text" id="student-name" class="w-full bg-[#050409] border border-slate-800 focus:border-orange-500 focus:outline-none text-white p-3 rounded" placeholder="Ex: Linus Torvalds">
-                            </div>
-                            <div class="space-y-2 font-mono text-xs sm:text-sm">
-                                <label class="text-slate-400 block font-bold">// PAGAMENTO:</label>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <label class="payment-method cursor-pointer">
-                                        <input type="radio" name="payment_method" value="PIX">
-                                        <div class="bg-[#050409] border border-slate-800 text-slate-400 p-3 rounded text-center font-bold uppercase text-xs">PIX (R$200)</div>
-                                    </label>
-                                    <label class="payment-method cursor-pointer">
-                                        <input type="radio" name="payment_method" value="Cartão">
-                                        <div class="bg-[#050409] border border-slate-800 text-slate-400 p-3 rounded text-center font-bold uppercase text-xs">Cartão</div>
-                                    </label>
-                                </div>
-                            </div>
-                            <button onclick="sendEnrollment()" class="w-full mt-4 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm uppercase py-3 rounded shadow-xl glow-orange code-font">
-                                [EXECUTE] Inscrição
-                            </button>
-                            <div id="checkout-error" class="text-center text-rose-400 text-xs font-bold code-font hidden pt-2"></div>
+                        <span class="text-xs text-slate-500 code-font">checkout_mentoria.sh</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="space-y-1 font-mono text-xs sm:text-sm">
+                            <label class="text-slate-400 block font-bold">// NOME COMPLETO:</label>
+                            <input type="text" id="student-name" class="w-full bg-[#050409] border border-slate-800 focus:border-orange-500 focus:outline-none text-white p-3 rounded" placeholder="Ex: Linus Torvalds">
                         </div>
+                        <div class="space-y-2 font-mono text-xs sm:text-sm">
+                            <label class="text-slate-400 block font-bold">// OPÇÃO DE PAGAMENTO:</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="payment-method cursor-pointer">
+                                    <input type="radio" name="payment_method" value="PIX" checked>
+                                    <div class="bg-[#050409] border border-slate-800 text-slate-400 p-3 rounded text-center font-bold uppercase text-xs transition-all">PIX (R$200)</div>
+                                </label>
+                                <label class="payment-method cursor-pointer">
+                                    <input type="radio" name="payment_method" value="Cartão">
+                                    <div class="bg-[#050409] border border-slate-800 text-slate-400 p-3 rounded text-center font-bold uppercase text-xs transition-all">Cartão</div>
+                                </label>
+                            </div>
+                        </div>
+                        <button onclick="sendEnrollment()" class="w-full mt-4 bg-orange-600 hover:bg-orange-500 text-white font-bold text-sm uppercase py-3 rounded shadow-xl glow-orange code-font transition-all">
+                            [EXECUTE] Inscrição via WhatsApp
+                        </button>
+                        <div id="checkout-error" class="text-center text-rose-400 text-xs font-bold code-font hidden pt-2"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ================= ABA 1: TREINAMENTOS ================= -->
-        <div id="content-treinamentos" class="tab-content">
+        <!-- SECTION: CONTEÚDO / EMENTA -->
+        <div id="ementa" class="scroll-mt-24 border-t border-slate-900 pt-16">
             <div class="text-center mb-12">
-                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_ACADEMY</span>
-                <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Treinamentos Gravados</h2>
-                <p class="mt-4 text-slate-400 max-w-2xl mx-auto font-light">Cursos diretos ao ponto para resolver problemas reais no menor tempo possível.</p>
+                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_CURRICULUM_LOG</span>
+                <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">O que você vai dominar</h2>
+                <p class="mt-2 text-slate-400 max-w-2xl mx-auto font-light text-sm">Uma trilha pensada estrategicamente para te tirar do zero e te transformar em um profissional pronto para o mercado de SRE e Infraestrutura.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="bg-[#110f1a] border border-slate-800/60 p-6 rounded-lg border-l-4 border-l-orange-500 flex flex-col justify-between">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Módulo 1 -->
+                <div class="bg-[#110f1a] border border-slate-800/60 p-6 rounded-xl flex flex-col justify-between hover:border-slate-700/80 transition-colors">
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 heading-brand">Básico: Sobrevivência no Terminal</h3>
-                        <p class="text-slate-400 text-sm mb-4">Aprenda a navegar, gerenciar permissões, editar arquivos com Vim e criar scripts básicos.</p>
+                        <div class="text-orange-500 font-bold text-xs code-font mb-2">[MÓDULO 01]</div>
+                        <h3 class="text-white font-bold text-lg mb-3 heading-brand uppercase tracking-tight">Fundamentos e Arquitetura</h3>
+                        <ul class="text-slate-400 text-sm space-y-2 font-light">
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Sobrevivência e navegação no Terminal</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Manipulação avançada de texto (Grep, Sed, Awk)</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Estrutura do Virtual File System e Inodes</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Permissões POSIX e Gerenciamento de ACLs</li>
+                        </ul>
                     </div>
-                    <button onclick="orderProduct('Treinamento: Sobrevivência no Terminal')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Saber Mais no WhatsApp</button>
                 </div>
-                <div class="bg-[#110f1a] border border-slate-800/60 p-6 rounded-lg border-l-4 border-l-orange-500 flex flex-col justify-between">
+
+                <!-- Módulo 2 -->
+                <div class="bg-[#110f1a] border border-slate-800/60 p-6 rounded-xl flex flex-col justify-between hover:border-slate-700/80 transition-colors">
                     <div>
-                        <h3 class="text-white font-bold text-lg mb-3 heading-brand">Avançado: Infra as Code (IaC)</h3>
-                        <p class="text-slate-400 text-sm mb-4">Domine Terraform, Ansible e Docker. Escale sua infraestrutura com código limpo e versionado.</p>
+                        <div class="text-orange-500 font-bold text-xs code-font mb-2">[MÓDULO 02]</div>
+                        <h3 class="text-white font-bold text-lg mb-3 heading-brand uppercase tracking-tight">Redes, Serviços e Kernel</h3>
+                        <ul class="text-slate-400 text-sm space-y-2 font-light">
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Stack de Redes no Linux e Roteamento</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Systemd: Services, Targets e Timers</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Gerenciamento de Logs Dinâmicos e Journald</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Parâmetros do Kernel com Sysctl</li>
+                        </ul>
                     </div>
-                    <button onclick="orderProduct('Treinamento: Infra as Code (IaC)')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Saber Mais no WhatsApp</button>
                 </div>
-            </div>
-        </div>
 
-        <!-- ================= ABA 2: HARDWARE ================= -->
-        <div id="content-hardware" class="tab-content">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_KERNELBASE_STORE</span>
-                <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand mb-4">Peças e Equipamentos</h2>
-                <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-                    Enviamos para todo o Brasil
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-[#110f1a] border border-slate-800/80 rounded-xl overflow-hidden flex flex-col">
-                    <div class="h-32 bg-slate-900 flex items-center justify-center border-b border-slate-800 text-5xl">🖥️</div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-white font-bold text-lg mb-2 heading-brand">Kit Servidor Xeon E5</h3>
-                        <p class="text-slate-400 text-sm mb-4 flex-1">Placa X99 + Processador 22 núcleos. Ideal para virtualização e laboratórios SRE.</p>
-                        <button onclick="orderProduct('Kit Servidor Xeon E5')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Cotar no WhatsApp</button>
-                    </div>
-                </div>
-                <div class="bg-[#110f1a] border border-slate-800/80 rounded-xl overflow-hidden flex flex-col">
-                    <div class="h-32 bg-slate-900 flex items-center justify-center border-b border-slate-800 text-5xl">💾</div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-white font-bold text-lg mb-2 heading-brand">64GB RAM DDR4 ECC</h3>
-                        <p class="text-slate-400 text-sm mb-4 flex-1">Memória com correção de erros para servidores. Estabilidade máxima 24/7.</p>
-                        <button onclick="orderProduct('64GB RAM DDR4 ECC')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Cotar no WhatsApp</button>
-                    </div>
-                </div>
-                <div class="bg-[#110f1a] border border-slate-800/80 rounded-xl overflow-hidden flex flex-col">
-                    <div class="h-32 bg-slate-900 flex items-center justify-center border-b border-slate-800 text-5xl">🖧</div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-white font-bold text-lg mb-2 heading-brand">Switch 24 Portas L2/L3</h3>
-                        <p class="text-slate-400 text-sm mb-4 flex-1">Equipamento Enterprise Gigabit com suporte a VLANs e agregação de link.</p>
-                        <button onclick="orderProduct('Switch Gerenciável 24 Portas')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Cotar no WhatsApp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= ABA 3: LICENÇAS ================= -->
-        <div id="content-licencas" class="tab-content">
-            <div class="text-center mb-12">
-                <span class="text-orange-500 font-bold uppercase text-xs tracking-widest block mb-1 code-font">_SOFTWARE_KEYS</span>
-                <h2 class="text-3xl font-black text-white uppercase tracking-tight heading-brand">Licenciamento Oficial</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-[#110f1a] border border-slate-800/80 rounded-xl overflow-hidden flex flex-col">
-                    <div class="h-32 bg-slate-900 flex items-center justify-center border-b border-slate-800 text-5xl">🔴</div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-white font-bold text-lg mb-2 heading-brand">Red Hat Enterprise Linux</h3>
-                        <p class="text-slate-400 text-sm mb-4 flex-1">Subscrição corporativa oficial com suporte da Red Hat para ambientes críticos.</p>
-                        <button onclick="orderProduct('Licença RHEL')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Solicitar Cotação</button>
-                    </div>
-                </div>
-                <div class="bg-[#110f1a] border border-slate-800/80 rounded-xl overflow-hidden flex flex-col">
-                    <div class="h-32 bg-slate-900 flex items-center justify-center border-b border-slate-800 text-5xl">🪟</div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="text-white font-bold text-lg mb-2 heading-brand">Windows Server 2022</h3>
-                        <p class="text-slate-400 text-sm mb-4 flex-1">Licenciamento por Core ou CALs. Regularize a infraestrutura da sua empresa.</p>
-                        <button onclick="orderProduct('Licença Windows Server 2022')" class="w-full bg-slate-800 hover:bg-orange-600 text-white font-bold text-xs uppercase py-3 rounded transition-all">Solicitar Cotação</button>
+                <!-- Módulo 3 -->
+                <div class="bg-[#110f1a] border border-slate-800/60 p-6 rounded-xl flex flex-col justify-between hover:border-slate-700/80 transition-colors">
+                    <div>
+                        <div class="text-orange-500 font-bold text-xs code-font mb-2">[MÓDULO 03]</div>
+                        <h3 class="text-white font-bold text-lg mb-3 heading-brand uppercase tracking-tight">Automação, Segurança e Diagnóstico</h3>
+                        <ul class="text-slate-400 text-sm space-y-2 font-light">
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Scripting em Bash focado em automação de tarefas</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Diagnóstico de performance de I/O e SSD (Smartctl)</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Auditoria de arquivos e segurança com Auditd</li>
+                            <li class="flex items-start gap-2"><span class="text-orange-500 font-mono text-xs mt-0.5">&gt;</span> Introdução a Containers e Isolamento (Docker)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -262,35 +191,14 @@
 
     </main>
 
+    <!-- Footer Fixo Modificado -->
     <footer class="border-t border-slate-900 bg-[#030206] py-8 text-center text-xs text-slate-600 code-font mt-auto">
         &copy; 2026 KERNELBASE. Engenharia de Sistemas Raiz.<br>
-        <span class="mt-2 block">João Pessoa/PB - Enviamos para todo o Brasil.</span>
+        <span class="mt-2 block">João Pessoa/PB - Mentoria Online e Ao Vivo para todo o Brasil.</span>
     </footer>
 
     <script>
-        // Sistema de Abas
-        function switchTab(tabId) {
-            // Esconde todos os conteúdos
-            document.querySelectorAll('.tab-content').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            // Reseta visual de todos os botões
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('bg-orange-500/10', 'text-orange-500', 'border-orange-500/30');
-                btn.classList.add('text-slate-400', 'border-transparent');
-            });
-
-            // Mostra o conteúdo selecionado
-            document.getElementById('content-' + tabId).classList.add('active');
-            
-            // Destaca o botão selecionado
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.remove('text-slate-400', 'border-transparent');
-            activeBtn.classList.add('bg-orange-500/10', 'text-orange-500', 'border-orange-500/30');
-        }
-
-        // Lógica WhatsApp (Mentoria)
+        // Lógica WhatsApp (Inscrição Direta)
         function sendEnrollment() {
             const name = document.getElementById('student-name').value.trim();
             const payment = document.querySelector('input[name="payment_method"]:checked');
@@ -298,18 +206,12 @@
             errorDiv.classList.add('hidden');
 
             if (!name || !payment) {
-                errorDiv.innerHTML = "❌ ERRO: Preencha todos os campos.";
+                errorDiv.innerHTML = "❌ ERRO: Digite seu nome para prosseguir.";
                 errorDiv.classList.remove('hidden');
                 return;
             }
 
-            const text = `Olá Daniel! Tenho interesse na Mentoria KernelBase.\n👤 Nome: ${name}\n💳 Pagamento: ${payment.value}`;
-            window.open(`https://wa.me/5583933003583?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        // Lógica WhatsApp (Produtos/Loja)
-        function orderProduct(productName) {
-            const text = `Fala Daniel! Vim pelo site da KernelBase e me interessei no seguinte item:\n\n🛒 *${productName}*\n\nPode me passar a cotação e ver a questão do envio?`;
+            const text = `Olá Daniel! Tenho interesse na Mentoria Linux SysAdmin.\n👤 Nome: ${name}\n💳 Preferência de Pagamento: ${payment.value}`;
             window.open(`https://wa.me/5583933003583?text=${encodeURIComponent(text)}`, '_blank');
         }
     </script>
